@@ -3,8 +3,9 @@
 
 from functions import *
 from Tkinter import *
-from pylab import hist, show, grid, axis, xlabel, ylabel, title
+from pylab import hist, show, grid, xlabel, ylabel, title
 from math import sqrt
+
 
 def main():
     # Initial configuration by user
@@ -36,6 +37,7 @@ def main():
 
     meanSpeeds = numpy.empty(N + 1)
 
+    print "Calculating ..."
     for i in range(0, iterations):
         # Simulate positions
         x = simulate(N)
@@ -50,33 +52,16 @@ def main():
         # Calculate mean speed
         v = (sqrt((Xm - Xn)**2 + (Ym - Yn)**2)) / (t_end - t_start)
 
-        print v
         meanSpeeds[i] = v
 
+    print "OK. Drawing ..."
     # Draw an histogram of meanSpeeds
-    hist(meanSpeeds)
+    hist(meanSpeeds, bins=N/2)
     title("Vitesse moyenne")
     xlabel("Vitesse")
     ylabel("Frequences")
+    grid(True)
     show()
-
-
-    # # Mark the start and end points.
-    # plot(x[0, 0], x[1, 0], 'go')
-    # plot(x[0, -1], x[1, -1], 'ro')
-
-    # # More plot decorations.
-    # title('Mouvement 2D')
-    # xlabel('x', fontsize=16)
-    # ylabel('y', fontsize=16)
-    # axis('equal')
-    # grid(True)
-    # show()
-
-    # root = Tk()
-    # root.title('Simulation mouvement particule')
-
-    # root.mainloop()
 
 if __name__ == '__main__':
     main()

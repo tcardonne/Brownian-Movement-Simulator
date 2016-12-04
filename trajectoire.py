@@ -45,10 +45,5 @@ def main():
     grid(True)
     show()
 
-    # root = Tk()
-    # root.title('Simulation mouvement particule')
-
-    # root.mainloop()
-
 if __name__ == '__main__':
     main()
