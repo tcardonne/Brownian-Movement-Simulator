@@ -33,9 +33,9 @@ def main():
     # Total time
     T = t_end - t_start
     # Number of steps
-    N = 10 * T  # 50 per seconds
+    N = T
 
-    meanSpeeds = numpy.empty(N + 1)
+    meanSpeeds = numpy.empty(iterations)
 
     print "Calculating ..."
     for i in range(0, iterations):
@@ -58,7 +58,7 @@ def main():
     # Draw an histogram of meanSpeeds
     hist(meanSpeeds, bins=N/2)
     title("Vitesse moyenne")
-    xlabel("Vitesse")
+    xlabel("Vitesse moyenne")
     ylabel("Frequences")
     grid(True)
     show()

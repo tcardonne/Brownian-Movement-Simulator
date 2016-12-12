@@ -25,8 +25,8 @@ def main():
     # Total time
     T = t_end - t_start
     # Number of steps
-    N = 10 * T  # 50 per seconds
-
+    #N = 10 * T  # 50 per seconds
+    N = T
     # Simulate positions
     x = simulate(N)
 
