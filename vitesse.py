@@ -56,7 +56,7 @@ def main():
 
     print "OK. Drawing ..."
     # Draw an histogram of meanSpeeds
-    hist(meanSpeeds, bins=N/2)
+    hist(meanSpeeds, bins=iterations/2)
     title("Vitesse moyenne")
     xlabel("Vitesse moyenne")
     ylabel("Frequences")
