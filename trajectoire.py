@@ -2,25 +2,24 @@
 # -*- coding: utf-8 -*-
 
 from functions import *
-from Tkinter import *
+from tkinter import *
 from pylab import plot, show, grid, axis, xlabel, ylabel, title
-
 
 def main():
     # Initial configuration by user
     while True:
-        t_start = int(raw_input("Intervalle de temps - Début : "))
+        t_start = int(input("Intervalle de temps - Début : "))
         if(type(t_start) is int and t_start >= 0):
             break
         else:
-            print "Veuillez entrer un entier positif"
+            print("Veuillez entrer un entier positif")
 
     while True:
-        t_end = int(raw_input("Intervalle de temps - Fin : "))
+        t_end = int(input("Intervalle de temps - Fin : "))
         if(type(t_end) is int and t_start < t_end):
             break
         else:
-            print "Veuillez entrer un entier positif strictement supérieur à %d" % t_start
+            print("Veuillez entrer un entier positif strictement supérieur à %d" % t_start)
 
     # Total time
     T = t_end - t_start
